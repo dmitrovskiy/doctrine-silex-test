@@ -1,0 +1,16 @@
+{
+    "name": "dmitrovskiy/doctrine-rest",
+    "description": "test rest API with silex and doctrine",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dmitrovskiy",
+            "email": "vladimir@tep.io"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "silex/silex": "1.*"
+    }
+}
