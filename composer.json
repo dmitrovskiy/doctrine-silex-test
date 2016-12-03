@@ -11,6 +11,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "silex/silex": "1.*"
+        "silex/silex": "2.*",
+        "dflydev/doctrine-orm-service-provider": "2.*"
     }
 }
