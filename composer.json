@@ -1,6 +1,6 @@
 {
-    "name": "dmitrovskiy/doctrine-rest",
-    "description": "test rest API with silex and doctrine",
+    "name": "theofl/service-rise-api",
+    "description": "RESTful API for service-rise project",
     "type": "project",
     "license": "MIT",
     "authors": [
@@ -9,9 +9,15 @@
             "email": "vladimir@tep.io"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
     "minimum-stability": "dev",
     "require": {
         "silex/silex": "2.*",
-        "dflydev/doctrine-orm-service-provider": "2.*"
+        "dflydev/doctrine-orm-service-provider": "2.*",
+        "jdesrosiers/silex-cors-provider": "1.*"
     }
 }

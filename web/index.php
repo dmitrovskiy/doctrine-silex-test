@@ -1,5 +1,5 @@
 <?php
 
-    $app = require __DIR__.'/../src/app.php';
-    $app->run();
+$app = require __DIR__.'/../src/app.php';
+$app->run();
 

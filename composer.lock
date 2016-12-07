@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c1a50142c0ddf46ee81852f0be8de00f",
-    "content-hash": "c450d256683336ae3a1ff866629ea0ff",
+    "hash": "c9150b70d16957f0f32dddbfaca33d5d",
+    "content-hash": "b8a250f6753b33b4fbe89d3d75cfa67d",
     "packages": [
         {
             "name": "dflydev/doctrine-orm-service-provider",
@@ -662,6 +662,56 @@
                 "orm"
             ],
             "time": "2016-11-26 05:06:11"
+        },
+        {
+            "name": "jdesrosiers/silex-cors-provider",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jdesrosiers/silex-cors-provider.git",
+                "reference": "6d4d487edbf965f5802f744bfd8f97a84f3522a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jdesrosiers/silex-cors-provider/zipball/6d4d487edbf965f5802f744bfd8f97a84f3522a2",
+                "reference": "6d4d487edbf965f5802f744bfd8f97a84f3522a2",
+                "shasum": ""
+            },
+            "require": {
+                "silex/silex": "~2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "symfony/browser-kit": "2.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JDesrosiers\\Silex\\Provider\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jason Desrosiers",
+                    "email": "jdesrosi@gmail.com"
+                }
+            ],
+            "description": "A silex service provider that adds CORS services to silex",
+            "keywords": [
+                "cors",
+                "cross",
+                "origin",
+                "provider",
+                "resource",
+                "service",
+                "sharing",
+                "silex"
+            ],
+            "time": "2016-06-05 21:39:17"
         },
         {
             "name": "pimple/pimple",
