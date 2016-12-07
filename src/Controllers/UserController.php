@@ -2,22 +2,41 @@
 
 namespace App\Controllers;
 
-use Silex\Api\ControllerProviderInterface;
+use App\Entities\User;
 use Silex\Application;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 
-class UserController implements ControllerProviderInterface
+/**
+ * Class UserController
+ *
+ * @package App\Controllers
+ */
+class UserController extends Controller
 {
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->get('/users', 'user.controller:getAllAction');
+        $controllers->get('/users/{id}', 'user.controller:findById');
+        $controllers->post('/users', 'user.controller:create');
 
         return $controllers;
     }
 
-    public function getAllAction(Application $app)
+    public function findById($id, Application $app)
     {
-        return $app->json(['message' => 'Hello, world']);
+        return $app->json(['id' => $id]);
+    }
+
+    public function create(Application $app, Request $request)
+    {
+        $data = $request->request->all();
+
+        $user = new User($data);
+        $userRepo = $this->factoryRepo->getUserRepository($app['db']);
+        $userRepo->create($user);
+
+        return new JsonResponse(null, 201);
     }
 }

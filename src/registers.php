@@ -16,15 +16,8 @@ $app->register(
     [
         'db.options' => [
             'driver' => 'pdo_mysql',
-            'url'    => 'mysql://root:password@mysql/app'
+            'url'    => $app['config.DB_URL']
         ]
-    ]
-);
-
-$app->register(
-    new \Dflydev\Provider\DoctrineOrm\DoctrineOrmServiceProvider(),
-    [
-        
     ]
 );
 

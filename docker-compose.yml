@@ -1,11 +1,13 @@
 version: "2"
 services:
     api:
-        image: dmitrovskiy/docker-nginx-php-fpm:1.0.0-alpine
+        build: _build/.
         ports:
             - 80:80
         volumes:
             - .:/var/www/html
+        environment:
+            - PHP_XDEBUG_ENABLED=1
     mysql:
         image: mysql:8.0.0
         volumes:
