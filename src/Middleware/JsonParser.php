@@ -16,7 +16,7 @@ class JsonParser
     {
         $content = $request->getContent();
         
-        if (false === strpos(
+        if (false !== strpos(
                 $request->headers->get('Content-Type'),
                 'json'
             )

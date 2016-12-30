@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Factories\RepositoryFactory;
 use Silex\Api\ControllerProviderInterface;
 
 /**
@@ -12,11 +11,4 @@ use Silex\Api\ControllerProviderInterface;
  */
 abstract class Controller implements ControllerProviderInterface
 {
-    /** @var RepositoryFactory */
-    protected $factoryRepo = null;
-
-    public function __construct(RepositoryFactory $factoryRepo)
-    {
-        $this->factoryRepo = $factoryRepo;
-    }
 }

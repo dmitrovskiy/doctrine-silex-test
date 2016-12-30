@@ -1,3 +1,10 @@
 <?php
 
-$app['config.DB_URL'] = getenv('DB_URL');
+$options = [
+    'DB_URL'
+];
+
+foreach ($options as $name) {
+    $val = getenv($name);
+    $app["config.$name"] = $val ?: null;
+}

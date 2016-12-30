@@ -6,43 +6,46 @@ namespace App\Entities;
  * Class User
  *
  * @package App\Entities
+ *
+ * @Entity
  */
-class User extends Entity
+class User
 {
-    protected $firstName = '';
-    protected $lastName = '';
-    protected $email = '';
-    protected $password = '';
+    /**
+     * @var int
+     * @Id
+     * @Column(type="integer")
+     * @GeneratedValue
+     */
+    protected $id;
 
-    public function __construct(array $data = [])
+    /**
+     * @var string
+     * @Column(type="string")
+     */
+    protected $firstName;
+
+    /**
+     * @var string
+     * @Column(type="string")
+     */
+    protected $lastName;
+
+    /**
+     * @var string
+     * @Column(type="string")
+     */
+    protected $email;
+
+    /**
+     * @var string
+     * @Column(type="string")
+     */
+    protected $password;
+
+    public function getId()
     {
-        parent::__construct($data);
-
-        if (isset($data['firstName'])) {
-            $this->setFirstName($data['firstName']);
-        }
-        if (isset($data['lastName'])) {
-            $this->setLastName($data['lastName']);
-        }
-        if (isset($data['email'])) {
-            $this->setEmail($data['email']);
-        }
-        if (isset($data['password'])) {
-            $this->setPassword($data['password']);
-        }
-    }
-
-    public function toArray()
-    {
-        return array_merge(
-            parent::toArray(),
-            [
-                'firstName' => $this->firstName,
-                'lastName' => $this->lastName,
-                'email' => $this->email,
-                'password' => $this->password
-            ]
-        );
+        return $this->id;
     }
 
     public function getFirstName()

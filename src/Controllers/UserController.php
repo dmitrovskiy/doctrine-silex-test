@@ -26,16 +26,23 @@ class UserController extends Controller
 
     public function findById($id, Application $app)
     {
-        return $app->json(['id' => $id]);
+        $user = $app['orm.em']->find(':User', $id);
+
+        return $app->json(json_encode($user));
     }
 
     public function create(Application $app, Request $request)
     {
         $data = $request->request->all();
 
-        $user = new User($data);
-        $userRepo = $this->factoryRepo->getUserRepository($app['db']);
-        $userRepo->create($user);
+        $user = new User();
+        $user->setFirstName($data['firstName']);
+        $user->setLastName($data['lastName']);
+        $user->setEmail($data['email']);
+        $user->setPassword($data['password']);
+
+        $app['orm.em']->persist($user);
+        $app['orm.em']->flush();
 
         return new JsonResponse(null, 201);
     }

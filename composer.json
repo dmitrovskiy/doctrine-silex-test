@@ -1,6 +1,6 @@
 {
-    "name": "theofl/service-rise-api",
-    "description": "RESTful API for service-rise project",
+    "name": "test/service-api",
+    "description": "RESTful API for service-api project",
     "type": "project",
     "license": "MIT",
     "authors": [
@@ -18,6 +18,10 @@
     "require": {
         "silex/silex": "2.*",
         "doctrine/dbal": "~2.2",
+        "dflydev/doctrine-orm-service-provider": "2.*",
         "jdesrosiers/silex-cors-provider": "1.*"
+    },
+    "config": {
+        "bin-dir": "bin"
     }
 }
